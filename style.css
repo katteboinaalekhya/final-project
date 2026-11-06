@@ -1,0 +1,852 @@
+/* ==========================================
+   TAP ACADEMY - PREMIUM GLASS & MARBLE UI
+   Theme: Royal Amethyst + Champagne
+========================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap");
+
+:root {
+  --purple: #7546c8;
+  --deep-purple: #32165f;
+  --lavender: #b89af4;
+  --gold: #d6ad68;
+  --white: #ffffff;
+  --text: #302447;
+  --muted: #746b82;
+  --glass: rgba(255, 255, 255, 0.65);
+  --border: rgba(255, 255, 255, 0.8);
+  --shadow: 0 15px 45px rgba(69, 39, 105, 0.12);
+}
+
+/* ==========================================
+   GLOBAL STYLING
+========================================== */
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  background:
+    radial-gradient(
+      ellipse at 10% 5%,
+      rgba(190, 161, 245, 0.35),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 90% 25%,
+      rgba(233, 207, 169, 0.3),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 20% 80%,
+      rgba(198, 177, 235, 0.25),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #f8f5ff, #fffdf9 50%, #f2edff);
+  overflow-x: hidden;
+}
+
+/* Marble-inspired background texture */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.25;
+  background: repeating-linear-gradient(
+    125deg,
+    transparent 0px,
+    transparent 100px,
+    rgba(173, 145, 205, 0.12) 102px,
+    transparent 105px
+  );
+}
+
+/* ==========================================
+   HEADINGS
+========================================== */
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--deep-purple);
+  line-height: 1.3;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: linear-gradient(110deg, #32165f, #8052d2, #c29a5e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  color: #7546c8;
+  font-size: 27px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  color: #a078bd;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+p {
+  color: var(--muted);
+}
+
+small {
+  color: #766b85;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+a {
+  color: #7546c8;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #c09149;
+  letter-spacing: 0.4px;
+}
+
+/* ==========================================
+   NAVIGATION BAR
+========================================== */
+
+body > table:first-of-type {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: none !important;
+  border-bottom: 1px solid rgba(130, 91, 183, 0.15);
+  box-shadow: 0 8px 30px rgba(49, 24, 83, 0.08);
+}
+
+body > table:first-of-type td {
+  border: none;
+  padding: 12px 25px;
+}
+
+body > table:first-of-type img {
+  border-radius: 16px;
+  vertical-align: middle;
+  box-shadow: 0 5px 20px rgba(117, 70, 200, 0.2);
+}
+
+body > table:first-of-type h3 {
+  display: inline-block;
+  margin-left: 12px;
+  color: var(--deep-purple);
+  font-size: 16px;
+}
+
+body > table:first-of-type a {
+  display: inline-block;
+  padding: 9px 12px;
+  border-radius: 30px;
+  font-size: 13px;
+}
+
+body > table:first-of-type a:hover {
+  background: #eee5ff;
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+body > center:first-of-type {
+  padding: 100px 20px 70px;
+  position: relative;
+  animation: fadeUp 1s ease both;
+}
+
+body > center:first-of-type h3 {
+  display: inline-block;
+  padding: 10px 24px;
+  color: #7950bb;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(174, 143, 223, 0.3);
+  border-radius: 40px;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+body > center:first-of-type h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  max-width: 950px;
+  margin: 20px auto;
+}
+
+body > center:first-of-type p {
+  font-size: 17px;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+body > center:first-of-type a {
+  display: inline-block;
+  padding: 13px 25px;
+  margin: 5px;
+  color: white;
+  background: linear-gradient(120deg, #7546c8, #a17be3);
+  border-radius: 35px;
+  box-shadow: 0 8px 25px rgba(117, 70, 200, 0.25);
+}
+
+body > center:first-of-type a:hover {
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(117, 70, 200, 0.4);
+}
+
+/* Hero statistics */
+
+body > center:first-of-type > table {
+  width: min(750px, 90%);
+  margin: 20px auto;
+  border: 1px solid var(--border) !important;
+  border-radius: 25px;
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+body > center:first-of-type > table th {
+  border: none;
+  padding: 25px;
+}
+
+body > center:first-of-type > table h2 {
+  font-size: 36px;
+  margin: 0;
+}
+
+/* ==========================================
+   SECTION DIVIDERS
+========================================== */
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #c5a5e7,
+    #d6ad68,
+    #c5a5e7,
+    transparent
+  );
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* ==========================================
+   COMMON TABLE CARD STYLING
+========================================== */
+
+table {
+  max-width: 100%;
+}
+
+center > table {
+  border-color: rgba(151, 117, 197, 0.2);
+}
+
+center > table[border="1"],
+center > table[border="2"],
+center > table[border="3"] {
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+td,
+th {
+  border-color: rgba(137, 105, 177, 0.15);
+}
+
+/* ==========================================
+   ABOUT HTML SECTION
+========================================== */
+
+body > center:nth-of-type(2) > table {
+  background: rgba(255, 255, 255, 0.66);
+  backdrop-filter: blur(20px);
+  border: 1px solid white !important;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+body > center:nth-of-type(2) > table td {
+  padding: 30px;
+  border: none;
+}
+
+body > center:nth-of-type(2) > table td:first-child {
+  background: linear-gradient(145deg, #eee5ff, #f9eddd);
+  border-right: 1px solid white;
+}
+
+body > center:nth-of-type(2) > table td:first-child h1 {
+  font-size: 65px;
+}
+
+body > center:nth-of-type(2) > table table {
+  border-collapse: separate;
+  border-spacing: 7px;
+}
+
+body > center:nth-of-type(2) > table table td {
+  background: #f1eaff;
+  border-radius: 12px;
+  padding: 10px;
+  color: #6944a5;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* ==========================================
+   IMPORTANCE CARDS
+========================================== */
+
+body > center:nth-of-type(3) > table {
+  width: 90%;
+  border-spacing: 15px;
+}
+
+body > center:nth-of-type(3) > table > tbody > tr > td {
+  width: 33%;
+  padding: 0;
+}
+
+body > center:nth-of-type(3) > table table {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 10px 30px rgba(65, 36, 102, 0.08);
+  transition: all 0.4s ease;
+}
+
+body > center:nth-of-type(3) > table table:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 45px rgba(103, 65, 160, 0.18);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #c5a3f1 !important;
+}
+
+body > center:nth-of-type(3) > table table td {
+  padding: 22px;
+  border: none;
+}
+
+body > center:nth-of-type(3) > table table h2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #eee4ff, #fff1dd);
+  border-radius: 18px;
+  font-size: 30px;
+}
+
+body > center:nth-of-type(3) > table table h3 {
+  color: #49306d;
+  font-size: 18px;
+}
+
+/* ==========================================
+   REAL WORLD USES
+========================================== */
+
+body > center:nth-of-type(4) > table {
+  border-collapse: separate;
+  border-spacing: 12px;
+}
+
+body > center:nth-of-type(4) > table td {
+  min-width: 130px;
+  padding: 22px;
+  border: 1px solid white;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 22px rgba(70, 45, 110, 0.08);
+  transition: 0.35s ease;
+}
+
+body > center:nth-of-type(4) > table td:hover {
+  background: linear-gradient(135deg, #eee4ff, #fff4e5);
+  transform: scale(1.06);
+}
+
+body > center:nth-of-type(4) > table h2 {
+  font-size: 34px;
+}
+
+/* ==========================================
+   PROJECT SHOWCASE
+========================================== */
+
+body > center:nth-of-type(5) > table {
+  width: 92%;
+  border-spacing: 18px;
+}
+
+body > center:nth-of-type(5) > table > tbody > tr > td {
+  width: 33%;
+  padding: 0;
+  vertical-align: top;
+}
+
+body > center:nth-of-type(5) > table table {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.95) !important;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 12px 35px rgba(63, 37, 103, 0.1);
+  transition: all 0.4s ease;
+}
+
+body > center:nth-of-type(5) > table > tbody > tr > td > table:hover {
+  transform: translateY(-12px) scale(1.015);
+  box-shadow: 0 22px 50px rgba(103, 65, 160, 0.2);
+}
+
+body
+  > center:nth-of-type(5)
+  > table
+  > tbody
+  > tr
+  > td
+  > table
+  > tbody
+  > tr:first-child {
+  background: linear-gradient(135deg, #6541a5, #b69ae8);
+}
+
+body
+  > center:nth-of-type(5)
+  > table
+  > tbody
+  > tr
+  > td
+  > table
+  > tbody
+  > tr:first-child
+  h1 {
+  color: white;
+  -webkit-text-fill-color: white;
+  font-size: 55px;
+  animation: float 3s ease-in-out infinite;
+}
+
+body
+  > center:nth-of-type(5)
+  > table
+  > tbody
+  > tr
+  > td
+  > table
+  > tbody
+  > tr:nth-child(2)
+  > td {
+  border: none;
+  padding: 0;
+}
+
+body
+  > center:nth-of-type(5)
+  > table
+  > tbody
+  > tr
+  > td
+  > table
+  > tbody
+  > tr:nth-child(2)
+  table {
+  border: none !important;
+  box-shadow: none;
+  background: transparent;
+}
+
+body
+  > center:nth-of-type(5)
+  > table
+  > tbody
+  > tr
+  > td
+  > table
+  > tbody
+  > tr:nth-child(2)
+  table
+  td {
+  border: none;
+  padding: 20px;
+}
+
+body > center:nth-of-type(5) > table small b {
+  color: #a47bcf;
+  letter-spacing: 2px;
+}
+
+body > center:nth-of-type(5) > table a {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: #f0e7ff;
+  color: #7044b0;
+  transition: 0.3s ease;
+}
+
+body > center:nth-of-type(5) > table a:hover {
+  background: linear-gradient(120deg, #7546c8, #a17be3);
+  color: white;
+  transform: translateX(5px);
+}
+
+/* ==========================================
+   TRAINER PROFILE
+========================================== */
+
+body > center:nth-of-type(6) > table {
+  width: 75%;
+  border: 1px solid white !important;
+  border-radius: 32px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.88),
+    rgba(237, 225, 255, 0.8)
+  );
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(66, 39, 106, 0.13);
+}
+
+body > center:nth-of-type(6) > table td {
+  border: none;
+  padding: 45px;
+}
+
+body > center:nth-of-type(6) > table h1:nth-of-type(2) {
+  display: inline-flex;
+  width: 115px;
+  height: 115px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e9dcff, #fff0dc);
+  border-radius: 50%;
+  font-size: 55px;
+  box-shadow: 0 10px 25px rgba(104, 66, 158, 0.15);
+}
+
+body > center:nth-of-type(6) > table table {
+  border: none !important;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+}
+
+body > center:nth-of-type(6) > table table td {
+  padding: 20px;
+  border-right: 1px solid #e8def4;
+}
+
+body > center:nth-of-type(6) > table table h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* ==========================================
+   CALL TO ACTION
+========================================== */
+
+body > center:nth-of-type(7) {
+  margin: 60px auto;
+  padding: 65px 20px;
+  width: 90%;
+  border-radius: 35px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(255, 255, 255, 0.2),
+      transparent 40%
+    ),
+    linear-gradient(120deg, #392064, #7546c8 60%, #9871d4);
+  box-shadow: 0 20px 50px rgba(77, 43, 125, 0.25);
+}
+
+body > center:nth-of-type(7) h1,
+body > center:nth-of-type(7) p {
+  color: white;
+  -webkit-text-fill-color: white;
+}
+
+body > center:nth-of-type(7) h2 a {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(120deg, #f3d8a9, #fff0d5);
+  border-radius: 40px;
+  color: #54357d;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
+}
+
+body > center:nth-of-type(7) h2 a:hover {
+  transform: scale(1.07);
+}
+
+/* ==========================================
+   TAP ACADEMY WEBSITE CARD
+========================================== */
+
+body > center:nth-of-type(8) > table {
+  border: 1px solid white !important;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+  transition: 0.4s ease;
+}
+
+body > center:nth-of-type(8) > table:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(80, 48, 120, 0.17);
+}
+
+body > center:nth-of-type(8) img {
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(100, 60, 150, 0.15);
+}
+
+/* ==========================================
+   GOOGLE MAP & YOUTUBE VIDEO
+========================================== */
+
+iframe {
+  max-width: 90%;
+  border: 5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(61, 36, 101, 0.17);
+  transition: 0.4s ease;
+}
+
+iframe:hover {
+  box-shadow: 0 20px 50px rgba(100, 62, 160, 0.23);
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+body > table:last-of-type {
+  width: 100%;
+  background: linear-gradient(120deg, #2c174d, #513078);
+  color: white;
+  border: none !important;
+  margin-top: 60px;
+}
+
+body > table:last-of-type td {
+  border: none;
+  padding: 25px;
+}
+
+body > table:last-of-type b,
+body > table:last-of-type small {
+  color: white;
+}
+
+body > table:last-of-type img {
+  vertical-align: middle;
+  border-radius: 8px;
+}
+
+body > table:last-of-type a {
+  color: #f3d9ad;
+}
+
+body > table:last-of-type a:hover {
+  color: white;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 900px) {
+  body > table:first-of-type td {
+    padding: 10px;
+  }
+
+  body > table:first-of-type a {
+    padding: 7px;
+    font-size: 11px;
+  }
+
+  body > center:nth-of-type(5) > table {
+    width: 96%;
+    border-spacing: 10px;
+  }
+
+  body > center:nth-of-type(5) > table > tbody > tr > td {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  body > table:first-of-type,
+  body > table:first-of-type tbody,
+  body > table:first-of-type tr,
+  body > table:first-of-type td {
+    display: block;
+    width: 100% !important;
+    text-align: center;
+  }
+
+  body > table:first-of-type td:last-child {
+    padding-top: 0;
+  }
+
+  body > center:first-of-type {
+    padding: 55px 15px;
+  }
+
+  body > center:first-of-type h1 {
+    font-size: 38px;
+  }
+
+  body > center:nth-of-type(2) > table,
+  body > center:nth-of-type(3) > table,
+  body > center:nth-of-type(5) > table {
+    width: 95%;
+  }
+
+  body > center:nth-of-type(2) > table td {
+    display: block;
+    width: 100%;
+  }
+
+  body > center:nth-of-type(3) > table,
+  body > center:nth-of-type(5) > table {
+    border-spacing: 10px;
+  }
+
+  body > center:nth-of-type(3) > table > tbody > tr > td,
+  body > center:nth-of-type(5) > table > tbody > tr > td {
+    display: block;
+    width: 100%;
+    padding-bottom: 15px;
+  }
+
+  body > center:nth-of-type(4) > table td {
+    min-width: 0;
+    padding: 10px;
+  }
+
+  body > center:nth-of-type(6) > table {
+    width: 95%;
+  }
+
+  body > center:nth-of-type(6) > table td {
+    padding: 20px;
+  }
+
+  body > center:nth-of-type(6) > table table td {
+    display: inline-block;
+    padding: 10px;
+  }
+
+  body > center:nth-of-type(7) {
+    padding: 35px 15px;
+  }
+
+  iframe {
+    width: 95%;
+    height: 280px;
+  }
+
+  body > table:last-of-type td {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
